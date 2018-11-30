@@ -1,4 +1,5 @@
 import {
+  Get,
   Post,
   Controller,
   Body,
@@ -9,6 +10,11 @@ import { CharacterReq } from './app.req'
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
+
+  @Get()
+  root() {
+    return 'Hello, World!'
+  }
 
   @Post('character')
   character(@Body() characterReq: CharacterReq) {
