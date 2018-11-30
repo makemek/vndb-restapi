@@ -1,8 +1,18 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common'
+import * as vndb from 'vndb'
+import { CharacterReq } from './app.req'
 
 @Injectable()
 export class AppService {
-  root(): string {
-    return 'Hello World!';
+
+  private _client
+
+  constructor() {
+    this._client = vndb.createClient()
+    this._client.login()
+  }
+
+  async character(characterReq: CharacterReq) {
+    return await this._client.character(characterReq)
   }
 }
