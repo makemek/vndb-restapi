@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common'
 import * as vndb from 'vndb'
 import { CharacterReq } from './app.req'
+import { promisify } from 'util'
+
+const sleep = promisify(setTimeout)
 
 @Injectable()
 export class AppService {
@@ -18,7 +21,16 @@ export class AppService {
     return new AppService(client)
   }
 
-  async character(characterReq: CharacterReq) {
-    return await this._client.character(characterReq)
+  async character(characterReq: CharacterReq, retry = 20) {
+    try {
+      return await this._client.character(characterReq)
+    } catch({ data }) {
+      console.error(characterReq.filters, data.minwait, retry)
+      if(data.id === 'throttled' && retry > 0) {
+        const waittime = (0.2 + data.minwait) * 1000
+        await sleep(waittime)
+        return await this.character(characterReq, retry - 1)
+      }
+    }
   }
 }

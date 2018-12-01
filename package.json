@@ -21,9 +21,7 @@
   "dependencies": {
     "@nestjs/common": "^5.4.0",
     "@nestjs/core": "^5.4.0",
-    "connect-timeout": "^1.9.0",
     "cors": "^2.8.5",
-    "express-slow-down": "^1.1.1",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.2",
@@ -32,7 +30,6 @@
   },
   "devDependencies": {
     "@nestjs/testing": "^5.1.0",
-    "@types/connect-timeout": "0.0.33",
     "@types/cors": "^2.8.4",
     "@types/express": "^4.16.0",
     "@types/jest": "^23.3.1",
