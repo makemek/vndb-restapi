@@ -18,9 +18,9 @@ function setup(app: INestApplication & INestExpressApplication) {
   app.use(cors())
   const speedLimiter = slowdown({
     windowMs: 10 * 60 * 1000,
-    delayAfter: 180,
-    delayMs: 3 * 1000,
+    delayAfter: 190,
+    delayMs: 2.5 * 1000,
   })
-  app.use(timeout('20m'))
+  app.use(timeout('1200s'))
   app.use('/character', speedLimiter)
 }
