@@ -1,10 +1,10 @@
 class CommonDto {
-  readonly page: Number
-  readonly results: Number
-  readonly sort: String
-  readonly reverse: Boolean
+  readonly page: number
+  readonly results: number
+  readonly sort: string
+  readonly reverse: boolean
 }
 
 export class CharacterReq extends CommonDto {
-  readonly filters: String
+  readonly filters: string
 }

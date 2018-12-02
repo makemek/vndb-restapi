@@ -1,12 +1,12 @@
-import { Module } from '@nestjs/common';
-import { VndbController } from './vndb.controller';
-import { VndbService } from './vndb.service';
+import { Module } from "@nestjs/common"
+import { VndbController } from "./vndb.controller"
+import { VndbService } from "./vndb.service"
 
 @Module({
   imports: [],
   controllers: [VndbController],
   providers: [{
-    provide: 'VndbService',
+    provide: "VndbService",
     useFactory: () => VndbService.build(),
   }],
 })

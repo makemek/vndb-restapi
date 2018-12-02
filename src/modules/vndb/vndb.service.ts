@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common'
-import * as vndb from 'vndb'
-import { CharacterReq } from './vndb.req'
-import { promisify } from 'util'
+import { Injectable } from "@nestjs/common"
+import * as vndb from "vndb"
+import { CharacterReq } from "./vndb.req"
+import { promisify } from "util"
 
 const sleep = promisify(setTimeout)
 
@@ -24,9 +24,8 @@ export class VndbService {
   async character(characterReq: CharacterReq, retry = 20) {
     try {
       return await this._client.character(characterReq)
-    } catch({ data }) {
-      console.error(characterReq.filters, data.minwait, retry)
-      if(data.id === 'throttled' && retry > 0) {
+    } catch ({ data }) {
+      if (data.id === "throttled" && retry > 0) {
         const waittime = (0.2 + data.minwait) * 1000
         await sleep(waittime)
         return await this.character(characterReq, retry - 1)

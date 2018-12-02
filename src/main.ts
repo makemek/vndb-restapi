@@ -1,6 +1,6 @@
-import { NestFactory } from '@nestjs/core'
-import { AppModule } from './app.module'
-import setup from './setup'
+import { NestFactory } from "@nestjs/core"
+import { AppModule } from "./app.module"
+import setup from "./setup"
 
 bootstrap()
 
