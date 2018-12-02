@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common'
 import * as vndb from 'vndb'
-import { CharacterReq } from './app.req'
+import { CharacterReq } from './vndb.req'
 import { promisify } from 'util'
 
 const sleep = promisify(setTimeout)
 
 @Injectable()
-export class AppService {
+export class VndbService {
 
   private _client: any
 
@@ -18,7 +18,7 @@ export class AppService {
     const client = vndb.createClient()
     // login should be done once, otherwise vndb throw already logged in error
     await client.login()
-    return new AppService(client)
+    return new VndbService(client)
   }
 
   async character(characterReq: CharacterReq, retry = 20) {

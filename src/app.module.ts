@@ -1,13 +1,11 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from '@nestjs/common'
+import { HomeModule } from './modules/home/home.module'
+import { VndbModule } from './modules/vndb/vndb.module'
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [{
-    provide: 'AppService',
-    useFactory: () => AppService.build(),
-  }],
+  imports: [
+    HomeModule,
+    VndbModule,
+  ]
 })
 export class AppModule {}
