@@ -7,7 +7,6 @@ const sleep = promisify(setTimeout)
 
 @Injectable()
 export class VndbService {
-
   private _client: any
 
   private constructor(client: any) {

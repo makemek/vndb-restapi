@@ -1,7 +1,4 @@
-import {
-  Get,
-  Controller,
-} from "@nestjs/common"
+import { Get, Controller } from "@nestjs/common"
 
 @Controller()
 export class HomeController {

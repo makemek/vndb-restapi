@@ -1,3 +1,3 @@
 export enum providersName {
-    CONFIG_ENV = "ConfigEnv",
+  CONFIG_ENV = "ConfigEnv",
 }

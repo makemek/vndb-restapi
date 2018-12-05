@@ -1,9 +1,4 @@
-import {
-  Get,
-  Post,
-  Controller,
-  Body,
-} from "@nestjs/common"
+import { Get, Post, Controller, Body } from "@nestjs/common"
 import { VndbService } from "./vndb.service"
 import { CharacterReq } from "./vndb.req"
 
