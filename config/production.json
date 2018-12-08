@@ -1,0 +1,4 @@
+{
+  "env": "production",
+  "mongoUri": "${env:MONGO_URI}"
+}

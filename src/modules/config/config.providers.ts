@@ -41,45 +41,7 @@ export interface EmailSenderReceiver {
 
 export interface EnvironmentConfig {
   env: string
-  logger: any
-  mahanakhon_geo: {
-    latitude: number
-    longitude: number
-  }
-  whether: {
-    dark_sky_secret: string
-  }
-  aws: {
-    access_key_id: string
-    secret_access_key: string
-    region: string
-    s3_bucket: string
-  }
-  email: {
-    general: EmailSenderReceiver
-    group_booking: EmailSenderReceiver
-    corporate_booking: EmailSenderReceiver
-    private_events: EmailSenderReceiver
-    educational_programs: EmailSenderReceiver
-    media_visit: EmailSenderReceiver
-    filming_inquiry: EmailSenderReceiver
-    photography: EmailSenderReceiver
-    others: EmailSenderReceiver
-    career: EmailSenderReceiver
-  }
-  postgres: {
-    host: string
-    port: number
-    username: string
-    password: string
-    database: string
-  }
-  jwt: {
-    secret: string
-  }
-  link: {
-    ticketingLink: string
-  }
+  mongoUri: string
 }
 
 interface Provider {

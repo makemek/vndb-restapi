@@ -1,3 +1,4 @@
 {
-  "env": "default"
+  "env": "default",
+  "mongoUri": "mongodb://dev:devvndb1@ds051665.mlab.com:51665/vndb-dev"
 }
