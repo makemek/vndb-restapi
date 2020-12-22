@@ -11,6 +11,7 @@ export const CharacterSchema = new mongoose.Schema(
     birthday: [Number],
     aliases: String,
     description: String,
+    age: Number,
     image: String,
     bust: Number,
     waist: Number,
