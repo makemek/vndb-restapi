@@ -9,6 +9,7 @@ export interface Character extends Document {
   readonly birthday: [number]
   readonly aliases: string
   readonly description: string
+  readonly age: number
   readonly image: string
   readonly bust: number
   readonly waist: number
