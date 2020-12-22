@@ -12,4 +12,12 @@ export class CharacterService {
   async findById(id: number): Promise<Character> {
     return await this._character.findOne({ id }).exec()
   }
+
+  async findByIds(ids: number[]): Promise<Character[]> {
+    return await this._character.find({
+      id: {
+        $in: ids,
+      },
+    })
+  }
 }
