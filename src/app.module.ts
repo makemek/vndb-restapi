@@ -12,7 +12,10 @@ import { CharacterModule } from "./modules/character/character.module"
 const config: EnvironmentConfig = loadConfigSync()
 @Module({
   imports: [
-    MongooseModule.forRoot(config.mongoUri, { useNewUrlParser: true }),
+    MongooseModule.forRoot(config.mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }),
     ConfigModule,
     HomeModule,
     VndbModule,
