@@ -1,7 +1,7 @@
 import { Document } from "mongoose"
 
 export interface Character extends Document {
-  readonly id: number
+  readonly id: any
   readonly name: string
   readonly original: string
   readonly gender: string

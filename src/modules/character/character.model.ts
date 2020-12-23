@@ -20,5 +20,5 @@ export const CharacterSchema = new mongoose.Schema(
     weight: Number,
     traits: [[Number]],
   },
-  { collection: "character" },
+  { collection: "character", id: false },
 )
