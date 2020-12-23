@@ -4,6 +4,10 @@
   "description": "VNDB Rest API",
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": "15.2.0",
+    "npm": "7.0.8"
+  },
   "scripts": {
     "build": "rimraf dist && tsc",
     "format": "prettier --write \"src/**/*.ts\"",
